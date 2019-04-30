@@ -4,7 +4,7 @@ a {text-decoration: none;}
 h1, h2, h3, h4, h5, h6 {font-weight: normal;}
 .clearfix::after {content: "";display: block;clear: both;}
 .wait-wrapper{display: none;position: fixed;top:0;left:0;height: 100%;width: 100%;
-z-index: 1;background: rgb(199, 197, 197);justify-content: center;
+z-index: 2;background: rgb(199, 197, 197);justify-content: center;
 align-items: center;}
 .wait-wrapper.active{display: flex;}
 .wait-loading {position: relative;width: 100px;height: 100px;}
@@ -18,18 +18,26 @@ background: #000;animation: spread 1.5s linear infinite;}
     to{width: 50px; height: 50px; opacity: 0;}
 }
 .top-nav-bar {padding: 20px 16px;transition: all 0.5s;}
-.bg{background: #ffffff;padding: 0 16px;color: black}
-.top-nav-bar-wrap {position: fixed;width: 100%;top: 0;left: 0;color: #b7b7b7;}
+.bg{background: #ffffff;padding: 0 16px;color: black;box-shadow: 0 2px 1px gray;}
+.top-nav-bar-wrap {position: fixed;width: 100%;top: 0;left: 0;color: #b7b7b7;z-index: 1;}
 .top-nav-bar-wrap .logo {font-size: 24px;font-family: "arial black";
 padding-top: 2.4px;padding-bottom: 4px;}
 .top-nav-bar-wrap>nav {padding-top: 4px;padding-bottom: 4px;}
 .top-nav-bar-wrap .logo .rs {color: #e6686a}
 .top-nav-bar-wrap .logo .card {margin-left: 4px;color: #9a9da2;}
 .top-nav-bar-wrap nav>ul {list-style: none;margin: 0;padding: 0;}
-.top-nav-bar-wrap nav>ul>li {float: left;margin-left: 17px;margin-right: 17px;line-height: 30px;}
-.top-nav-bar-wrap nav>ul>li>a {font-size: 12px;font-weight: bold;position: relative;color: inherit;display: block;
-padding-top: 3px;padding-bottom: 3px;}
-.top-nav-bar-wrap nav>ul>li>a:hover::after {content: '';position: absolute;bottom: 0;left: 0;width: 100%; 
+.top-nav-bar-wrap nav>ul>li {float: left;margin: 0 17px;position: relative;}
+.top-nav-bar-wrap nav>ul>li>a {font-size: 12px;font-weight: bold;color: inherit;display: block;
+padding: 12px 0;}
+.top-nav-bar-wrap .dropdown{list-style: none;position: absolute;background: #ffffff;color: #3d4451;
+right: 0;display: none;top: 100%;}
+.top-nav-bar-wrap .dropdown>li{white-space: nowrap;margin: 5px 7px;cursor: pointer;}
+.top-nav-bar-wrap nav>ul>li:hover>.dropdown{display: block;animation: dropdownMenu 0.3s;}
+@keyframes dropdownMenu{
+    from{margin-right: 100%;}
+    tp{margin-right: 0;}
+}
+.top-nav-bar-wrap nav>ul>li:hover>a::before {content: '';position: absolute;bottom: 5%;left: 0;width: 100%; 
 display: block;height: 3px; background: red; animation: menuEffect 0.3s;}
 @keyframes menuEffect {
     from{width: 0%;}
