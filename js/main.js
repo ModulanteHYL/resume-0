@@ -8,6 +8,15 @@ window.onscroll = function () {
         document.getElementById('topBar').classList.remove('bg');
     }
 }
+all.onclick = function () {
+    barInner.className = 'bar-inner all';
+}
+framework.onclick = function () {
+    barInner.className = 'bar-inner framework';
+}
+native.onclick = function () {
+    barInner.className = 'bar-inner native';
+}
 // let liTags = navMenu.getElementsByTagName('li');
 // for (let i = 0; i < liTags.length; i++) {
 //     liTags[i].onmouseenter = function (e) {

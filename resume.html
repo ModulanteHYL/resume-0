@@ -27,9 +27,9 @@
                 <ul id="navMenu" class="clearfix">
                     <li><a href="#">关于</a></li>
                     <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a>
+                    <li><a href="#portfolio">作品</a>
                         <ul class="dropdown">
-                            <li>作品1</li>
+                            <li>作品111111111111111111</li>
                             <li>作品2</li>
                             <li>作品3</li>
                         </ul>
@@ -51,7 +51,7 @@
     <div class="banner">
         <div class="mask"></div>
     </div>
-    <main>
+    <main class="userCard-wrapper">
         <div class="userCard">
             <div class="clearfix border-interval">
                 <div class="picture">
@@ -143,7 +143,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -155,17 +155,6 @@
                 <div id="barInner" class="bar-inner all"></div>
             </div>
         </nav>
-        <script>
-            all.onclick = function () {
-                barInner.className = 'bar-inner all';
-            }
-            framework.onclick = function () {
-                barInner.className = 'bar-inner framework';
-            }
-            native.onclick = function () {
-                barInner.className = 'bar-inner native';
-            }
-        </script>
         <div class="works">
             <div class="w1">
                 <img src="./img/works1.jpg" alt="作品1">
