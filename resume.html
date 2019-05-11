@@ -2,23 +2,15 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <style type="text/css">
-        .icon {
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.15em;
-            fill: currentColor;
-            overflow: hidden;
-        }
-    </style>
 </head>
 
 <body>
     <div id="waitWrapper" class="wait-wrapper active">
         <div class="wait-loading"></div>
     </div>
-    <div  class="top-nav-bar-wrap ">
+    <div class="top-nav-bar-wrap ">
         <div id="topBar" class="top-nav-bar clearfix">
             <a class="logo" href="#" alt="logo" style="float:left;">
                 <span class="rs">RS</span><span class="card">card</span>
@@ -26,10 +18,10 @@
             <nav style="float:right">
                 <ul id="navMenu" class="clearfix">
                     <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
+                    <li><a href="#skills">技能</a></li>
                     <li><a href="#portfolio">作品</a>
                         <ul class="dropdown">
-                            <li>作品111111111111111111</li>
+                            <li>作品1</li>
                             <li>作品2</li>
                             <li>作品3</li>
                         </ul>
@@ -102,7 +94,7 @@
             介绍
         </p>
     </main>
-    <section class="skills">
+    <section id="skills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -145,30 +137,38 @@
     </section>
     <section class="portfolio" id="portfolio">
         <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                <li id="all">所有</li>
-                <li id="framework">框架</li>
-                <li id="native">原生JS &amp; CSS</li>
-            </ol>
-            <div class="bar">
-                <div id="barInner" class="bar-inner all"></div>
-            </div>
-        </nav>
-        <div class="works">
-            <div class="w1">
-                <img src="./img/works1.jpg" alt="作品1">
-            </div>
-            <div class="w2">
-                <img src="./img/works2.jpg" alt="作品2">
-            </div>
-            <div class="w3">
-                <img src="./img/works3.jpg" alt="作品3">
+        <div class="swiper-wrapper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <img src="./img/works1.jpg" alt="作品1" class="swiper-slide">
+                    <img src="./img/works2.jpg" alt="作品2" class="swiper-slide">
+                    <img src="./img/works3.jpg" alt="作品3" class="swiper-slide">
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
+    <div class="message">
+        <h2>留言</h2>
+        <ol class="messageList"></ol>
+        <form>
+            <label>姓名：</label>
+            <input type="text" name="name">
+            <label>留言：</label>
+            <input type="text" name="content">
+            <input type="submit" name="提交">
+        </form>
+    </div>
     <script src="//at.alicdn.com/t/font_1154196_zxfxaet2nqd.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.13.1/dist/av-min.js"></script>
+    
+    <script src="./js/loading.js"></script>
+    <script src="./js/topBarEvents.js"></script>
+    <script src="./js/work_slides.js"></script>
+    <script src="./js/messageFn.js"></script>
 </body>
 
 </html>

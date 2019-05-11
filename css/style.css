@@ -1,9 +1,11 @@
 * {margin: 0;padding: 0;}
-body {background-color: #efefef;}
+body {background-color: #efefef;overflow-y: hidden}
 a {text-decoration: none;}
+li{list-style: none;}
+.icon {width: 1em;height: 1em;vertical-align: -0.15em;fill: currentColor;overflow: hidden;}
 h1, h2, h3, h4, h5, h6 {font-weight: normal;}
 .clearfix::after {content: "";display: block;clear: both;}
-div.wait-wrapper{display: none;position: fixed;top:0;left:0;height: 100%;width: 100%;z-index: 2;background: rgb(199, 197, 197);justify-content: center;align-items: center;}
+div.wait-wrapper{display: none;position: fixed;top:0;left:0;height: 100%;width: 100%;z-index: 999;background: rgb(199, 197, 197);justify-content: center;align-items: center;}
 div.wait-wrapper.active{display: flex;}
 div.wait-wrapper>.wait-loading {position: relative;width: 100px;height: 100px;}
 div.wait-wrapper>.wait-loading::before,
@@ -11,7 +13,7 @@ div.wait-wrapper>.wait-loading::after {position: absolute;content: '';border-rad
 @keyframes spread{from{width: 0; height: 0; opacity: 1;}to{width: 50px; height: 50px; opacity: 0;}}
 div.wait-wrapper>.wait-loading::after{animation-delay: 0.75s;}
 
-div.top-nav-bar-wrap {position: fixed;width: 100%;top: 0;left: 0;color: #b7b7b7;z-index: 1;}
+div.top-nav-bar-wrap {position: fixed;width: 100%;top: 0;left: 0;color: #b7b7b7;z-index: 20;}
 div.top-nav-bar-wrap>.top-nav-bar {padding: 20px 16px;transition: all 0.5s;}
 div.top-nav-bar-wrap>.top-nav-bar.bg{background: #ffffff;padding: 0 16px;color: black;box-shadow: 0 0 10px gray;}
 div.top-nav-bar-wrap .logo {font-size: 24px;font-family: "arial black";padding-top: 2.4px;padding-bottom: 4px;}
@@ -55,27 +57,23 @@ main.userCard-wrapper>.self-introduction {max-width: 940px;margin: 50px auto 0;t
 section.skills,
 section.portfolio {max-width: 940px;margin: 60px auto;}
 section.skills>h2,
-section.portfolio>h2 {text-align: center;font-size: 34px;color: #3d4451;line-height: 1.2;font-weight: 600;margin-bottom: 40px;}
+section.portfolio>h2,
+div.message>h2 {text-align: center;font-size: 34px;color: #3d4451;line-height: 1.2;font-weight: 600;margin-bottom: 40px;}
 section.skills>ol {background: white;box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);padding: 42px 50px 20px;}
 section.skills>ol>li {float: left;list-style: none;width: 48%;}
 section.skills>ol>li:nth-child(even) {float: right;}
 section.skills>ol>li>h3 {font-size: 14px;line-height: 1.1;font-weight: 40px;margin: 5px 0;}
 section.skills>ol>li>.progress-bar {background: #fae1e1;height: 5px;margin-bottom: 35px;}
 section.skills>ol>li .progress {background: #e6686a;height: 100%;width: 75%;}
+@keyframes progressGo {from{width: 0;}to{width: 75%;}}
 
 section.portfolio{text-align: center;}
-section.portfolio>nav {text-align: center;display: inline-block;vertical-align: top;}
-section.portfolio>nav>ol {display: inline-block;vertical-align: top;}
-section.portfolio>nav>ol>li {float: left;list-style: none;margin: 0 20px; cursor: pointer;}
-section.portfolio>nav>.bar{margin-top: 5px;margin-bottom: 30px;height: 5px;background: white;border-radius: 2px;box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);}
-section.portfolio>nav>.bar>.bar-inner{height: 100%;border-radius: 2px;background: #e6686a;transition: all 0.5s;}
-section.portfolio>nav>.bar>.all{margin-left: 0px;width: 60px;}
-section.portfolio>nav>.bar>.framework{margin-left: 83px;width: 60px;}
-section.portfolio>nav>.bar>.native{margin-left: 159px;width: 125px;}
-section.portfolio>div.works{height: 580px;position: relative;}
-section.portfolio>div.works>.w1,
-section.portfolio>div.works>.w2,
-section.portfolio>div.works>.w3{position: absolute;}
-section.portfolio>div.works>.w1{top: 0;left: 10px;}
-section.portfolio>div.works>.w2{top: 0;left: 634px;}
-section.portfolio>div.works>.w3{top: 298px;left: 634px;;}
+section.portfolio>.swiper-wrapper{position: relative;}
+section.portfolio>.swiper-wrapper>.swiper-container {width: 720px;height: 540px;position: unset;}
+section.portfolio>.swiper-wrapper>.swiper-container>.swiper-button-prev,
+section.portfolio>.swiper-wrapper>.swiper-container>.swiper-button-next{background-color: white; width: 60px;height: 60px;border-radius: 50%;}
+
+div.message{width: 100%;margin-bottom: 50px;}
+div.message>form{width: 700px;margin: 50px auto;}
+div.message>ol.messageList{max-width: 700px;margin: 0 auto;}
+div.message>ol.messageList>li{padding: 16px;border-bottom: 1px solid #ddd;font-weight: bold;}
