@@ -1,11 +1,6 @@
 !function () {
-    var view = document.querySelector('.portfolio');
-    var controller = {
-        view: null,
-        init: function (view) {
-            this.view = view;
-            this.bindEvents();
-        },
+    var view = View('.portfolio');
+    var controller = Controller({
         bindEvents: function () {
             var mySwiper = new Swiper('.swiper-container', {
                 loop: true,
@@ -13,6 +8,6 @@
                 navigation: {nextEl: '.swiper-button-next',prevEl: '.swiper-button-prev',},
             })
         }
-    }
+    })
     controller.init(view);
 }.call();

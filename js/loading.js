@@ -1,18 +1,13 @@
 !function () {
-    var view = document.querySelector('.wait-wrapper');
+    var view = View('div.wait-wrapper');
 
-    var controller = {
-        view: null,
-        init: function (view) {
-            this.view = view;
-            this.bindEvent();
-        },
-        bindEvent: function () {
+    var controller = Controller({
+        bindEvents: function () {
             window.onload = () => {
                 localStorage.clear();
                 setTimeout(() => {
                     this.view.classList.remove('active');
-                    document.body.style.overflowY='auto';
+                    document.body.style.overflowY = 'auto';
                 }, 1000);
                 if (window.scrollY > 0) {
                     setTimeout(function () {
@@ -22,6 +17,6 @@
             }
 
         }
-    }
+    })
     controller.init(view);
 }.call();

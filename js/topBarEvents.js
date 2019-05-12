@@ -1,12 +1,7 @@
 !function () {
-    var view = document.querySelector('.top-nav-bar-wrap');
+    var view = View('div.top-nav-bar-wrap');
 
-    var controller = {
-        view: null,
-        init: function (view) {
-            this.view = view;
-            this.bindEvents();
-        },
+    var controller = Controller({
         bindEvents: function () {
             window.onscroll = () => {
                 var topBar = this.view.querySelector('.top-nav-bar');
@@ -17,6 +12,6 @@
                 }
             }
         }
-    }
+    })
     controller.init(view);
 }.call();
